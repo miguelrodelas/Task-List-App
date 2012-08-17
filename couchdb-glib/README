@@ -1,0 +1,113 @@
+CouchDB-glib is a GLib-based implementation of the client side protocol for
+CouchDB (http://couchdb.apache.org), a replication and synchronization
+database from the Apache project.
+
+Building
+========
+To build it, the following dependencies are needed:
+
+	* json-glib >= 0.7.2
+	* glib and gobject
+	* libsoup >= 2.4
+
+To actually build it, do the following:
+
+	./configure (or ./autogen.sh if there is no configure script)
+	make
+	make install
+
+
+Testing
+=======
+To build couchdb-glib and desktop-couch-glib and the run all the tests do:
+
+    make test
+
+The test results are writen in tests/report.html.
+
+The testing database will be deleted after all tests are executed. To keep
+the testing database do the following and access it at
+http://test:test@127.0.0.1:5985/_utils/:
+
+    make test KEEP_COUCHDB=yes
+    
+To list all available tests:
+
+    make list-tests
+
+To run only a subset from all tests:
+
+    make test TESTPATH="/couchdb-glib/Session"
+
+
+API
+===
+The main entry point in the API is the CouchDB object, which is needed for all
+operations involving access to the CouchDB databases. To create it:
+
+	couchdb = couchdb_new (hostname);
+
+The only argument is to specify the hostname of the CouchDB instance you want
+to connect to. If NULL, it will connect to the default, which is
+http://localhost:5984.
+
+Once you have a valid CouchDB object, you can perform several operations on
+databases:
+	* List databases -> couchdb_list_databases()
+	* Create a database -> couchdb_create_database()
+	* Delete a database -> couchdb_delete_database()
+	* List documents in a database -> couchdb_list_documents()
+
+There is also a polling mechanism, which allows your application to listen
+for changes on a specific database on the CouchDB instance you're connecting
+to. To start listening for changes, you just need to:
+	* Call couchdb_listen_for_changes
+	* And g_signal_connect the CouchDB object to the following signals:
+		- "database_created"
+		- "database_deleted"
+		- "document_created"
+		- "document_updated"
+		- "document_deleted"
+
+Documents can easily be managed by using the CouchDBDocument object, which
+provides an API for creating new documents in memory and save them on a
+database on the CouchDB instance you're connected to:
+	* Create an empty, in-memory document -> couchdb_document_new()
+	* Get an existing document from the database -> couchdb_document_get()
+	* Delete an existing document -> couchdb_document_delete()
+
+Documents' API provides meaningful functions to manage its contents. First of
+all, there are standard fields on each document, which you can set/get easily:
+	* Unique ID -> couchdb_document_get_id() and couchdb_document_set_id()
+	* Revision -> couchdb_document_get_revision() and
+          couchdb_document_set_revision()
+	* Record type -> couchdb_document_get_record_type() and
+	  couchdb_document_set_record_type()
+	* Application annotations (application-specific data) ->
+	  couchdb_document_get_application_annotations() and
+	  couchdb_document_set_application_annotations()
+
+Apart from those standard fields, documents can have whatever fields you need
+to, so the CouchDBDocument API provides functions for setting fields of
+different types:
+	* Booleans -> couchdb_document_get_boolean_field() and
+	  couchdb_document_set_boolean_field()
+	* Integers -> couchdb_document_get_int_field() and
+	  couchdb_document_set_int_field()
+	* Doubles -> couchdb_document_get_double_field() and
+	  couchdb_document_set_double_field()
+	* Strings -> couchdb_document_get_string_field() and
+	  couchdb_document_set_string_field()
+
+There are some structured field types which are also supported:
+	* Structs -> couchdb_document_get_struct_field() and
+	  couchdb_document_set_struct_field(). These use a special type,
+	  CouchDBStructField, which in turn provides the same get/set functions
+	  than the CouchDBDocument functions explained above.
+	* Arrays (not yet supported)
+
+There are also higher level documents management functions, that internally
+deal with specific record types. They are just built on top of the
+CouchDBDocument API but provide an easy way to deal with those specific
+record types:
+	* Contacts -> couchdb_document_contact_*

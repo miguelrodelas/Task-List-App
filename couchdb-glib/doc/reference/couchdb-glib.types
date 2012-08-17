@@ -1,0 +1,7 @@
+couchdb_credentials_get_type
+couchdb_database_info_get_type
+couchdb_document_get_type
+couchdb_document_info_get_type
+couchdb_session_get_type
+couchdb_struct_field_get_type
+

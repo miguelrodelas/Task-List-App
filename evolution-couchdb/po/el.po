@@ -1,0 +1,38 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Tournaris Pavlos <p.tournaris@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-10-13 12:20+0000\n"
+"PO-Revision-Date: 2009-10-16 19:38+0300\n"
+"Last-Translator: Tournaris Pavlos <p.tournaris@gmail.com>\n"
+"Language-Team: Greek <team@gnome.gr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../plugins/couchdb-contacts-source.c:111
+msgid "CouchDB"
+msgstr "CouchDB"
+
+#: ../plugins/couchdb-contacts-source.c:235
+msgid "<b>Server</b>"
+msgstr "<b>Διακομιστής</b>"
+
+#: ../plugins/couchdb-contacts-source.c:242
+msgid "Desktop CouchDB"
+msgstr "CouchDB επιφάνειας εργασίας"
+
+#: ../plugins/couchdb-contacts-source.c:248
+msgid "System-wide CouchDB"
+msgstr "CouchDB συστήματος"
+
+#: ../plugins/couchdb-contacts-source.c:254
+msgid "Remote CouchDB server"
+msgstr "Απομακρυσμένος διακομιστής CouchDB"
+

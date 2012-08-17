@@ -1,0 +1,4 @@
+- Force schema on well known record types, maybe by capturing additions of top
+  level fields and throwing errors if field not present in the schema
+- Add async functions
+- Don't expose JsonGLib objects in API

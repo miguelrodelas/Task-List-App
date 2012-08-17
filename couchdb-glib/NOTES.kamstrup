@@ -1,0 +1,32 @@
+TODO:
+-----
+Silent build rules
+Single header includes
+? Get rid of CouchDBStructField ?
+Make 'make check' run unit tests
+Rename CouchDB class to CouchDBConnection
+Add method couchdb_send_async using a SoupSessionAsync underneath
+A .ini parser to extract OAUTH credentials from desktop-couchdb.ini
+Move couchdb_document_put() to couchdb_put(doc) in order to separate responsibilities and make CouchDB sub-classable
+Class struct padding for future ABI stability
+Ref counting in custom boxed types vs. full GObjects
+Abstract out OAUTH, in favour of custom message filters in couchdb_send_message
+
+DONE:
+-----
+
+In couchdb.*:
+ * Don't make API depend on whether we are configured with OAUTH
+ * Move OAUTH related functionality from util.* here
+ * New method couchdb_send_message() replacing send_message_and_parse() from util.*
+
+In couchdb-document.c:
+ * Change refs to internal API of CouchDB object's ->hostname to method calls
+ * Change refs to internal API of CouchDBStructField ->json_object to use method call
+
+In couchdb-struct-field.*:
+ * Add method _get_json_object()
+ 
+THOUGHTS:
+ * CouchDBStructField seems to be a superfluous wrapper of JSonObject
+ * Rename CouchDB object to CouchDBConnection

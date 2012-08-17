@@ -1,0 +1,164 @@
+=============
+Version 0.6.3
+=============
+- Never have a NULL URI in CouchdbSession (Rodrigo Moya)
+- Add missing contact name fields to desktopcouch API (Rodrigo Moya) (LP: #532930)
+- Include couchdb-glib directory when scanning desktopcouch for introspection
+  (Rodrigo Moya)
+
+=============
+Version 0.6.2
+=============
+- Use correct includedir for desktopcouch-glib introspection (Rodrigo Moya)
+- Add missing header for free() (Andreas Jaeger)
+- Return TRUE in watch_timeout_cb (Andreas Jaeger)
+
+=============
+Version 0.6.1
+=============
+- Version correctly ABI-breaking lib Rodrigo Moya)
+
+=============
+Version 0.6.0
+=============
+- Move contacts record code to desktopcouch-glib (Rodrigo Moya)
+- Add categories API for contacts documents (Rodrigo Moya)
+- Don't force callers to pass a GError (Rodrigo Moya)
+- Add replication API (Rodrigo Moya)
+- Add API for compacting databases (Rodrigo Moya)
+- Add API documentation (Rodrigo Moya)
+- Free also the uuid stored in CouchdbStructField object (Rodrigo Moya)
+- Add support for arrays values (Rodrigo Moya)
+
+==============
+Version 0.5.99
+==============
+- Privatize object declarations and added accessor methods (Johan Dahlin)
+- Rename CouchDB* to Couchdb (Johan Dahlin)
+- Rename Couchdb object to CouchdbSession (Rodrigo Moya)
+- Add introspection support (Johan Dahlin)
+- GObjectify CouchdbSession object's constructor (Johan Dahlin)
+- Added json-glib dependency to .pc files (Rodrigo Moya)
+- Use a private structure instead of hiding the CouchdbSession object
+  declaration (Rodrigo Moya)
+- Added desktopcouch-glib library, to contain desktopcouch-specific
+  code (Rodrigo Moya)
+- Add configure option to enable/disable debug messages (Adi Roiban)
+- Added CouchdbCredentials object to store credentials (Rodrigo Moya)
+- Use the new credentials object for authentication (Rodrigo Moya)
+- Conditionally log debugging messages (Adi Roiban)
+- Add basic HTTP authentication to CouchdbCredentials (Adi Roiban)
+
+=============
+Version 0.5.3
+=============
+- Remove superflous OAuth debug messages (Rodrigo Moya)
+- Set a shorter timeout (1 minute) for localhost polling (Rodrigo Moya)
+- Only return a CouchDBStructField in couchdb_struct_field_get_struct_field
+  if the field exists (Rodrigo Moya)
+- Fixed typo in postal address's street field name (Rodrigo Moya)
+
+=============
+Version 0.5.2
+=============
+- Don't include non-OAuth URL parameters in OAuth header (Rodrigo Moya)
+- Return TRUE in couchdb_document_delete when successful (Rodrigo Moya)
+
+=============
+Version 0.5.1
+=============
+- Added API to manipulate IM addresses for contact records (Rodrigo Moya)
+- Use 127.0.0.1 instead of localhost for local couchdb instances (Rodrigo Moya)
+
+=============
+Version 0.5.0
+=============
+- Added changes notifications (Rodrigo Moya)
+- Added some API info to the README file (Rodrigo Moya)
+- Encode document UIDs when doing HTTP requests (Rodrigo Moya)
+- Added OAuth support (Rodrigo Moya)
+
+=============
+Version 0.4.5
+=============
+- Add lots of new contact record fields (Rodrigo Moya)
+- Check presence of fields in JSON objects before accessing them to avoid lots
+  of warnings (Rodrigo Moya)
+- Added functions to deal with URLs in contact documents (Rodrigo Moya)
+- Add uuid to list of pkg-config modules to look for (Rodrigo Moya)
+
+=============
+Version 0.4.4
+=============
+- Only include json-glib.h (Rodrigo Moya)
+- Depend on json-glib >= 0.7.4 to have saving of documents working (Rodrigo Moya)
+- Send errors from libsoup back to the caller (Rodrigo Moya)
+- Add contact records creation convenience function (Rodrigo Moya)
+- Add support for application_annotations field (Rodrigo Moya)
+- Add functions to convert struct fields to and from strings (Rodrigo Moya)
+
+=============
+Version 0.4.3
+=============
+- Add test suite for API (Rodrigo Moya)
+- Make all JSON-related functions use utility functions rather than JSON-glib
+  ones, and make these remove fields from documents when values are NULL
+  (Rodrigo Moya)
+- Added UUIDs to API, and ways to generate them for objects that don't have it
+  (Rodrigo Moya)
+- Assume hostnames from clients come with the http/https part of the URI, so
+  don't add it (Rodrigo Moya)
+- Increase so version of shared library (Rodrigo Moya)
+
+=============
+Version 0.4.2
+=============
+- Fixes for Ubuntu packaging (Rodrigo Moya)
+- Add LICENSE file to upstream tarball (Rodrigo Moya)
+
+=============
+Version 0.4.1
+=============
+- Add couchdb_get_hostname function (Rodrigo Moya)
+- Fixed CouchDBDocument object creation (Rodrigo Moya)
+- Added missing request body setup in send_message_and_parse function
+  (Rodrigo Moya)
+- Return TRUE in couchdb_document_put when successful (Rodrigo Moya)
+- Add missing couchdb_document_contact_set_email_addresses implementation
+  (Rodrigo Moya)
+- Added missing couchdb_document_contact_set_phone_numbers implementation
+  (Rodrigo Moya)
+- Add couchdb_document_contact_phone_new function (Rodrigo Moya)
+- Use couchdb_document_get_id instead of accessing directly the _id field
+  (Rodrigo Moya)
+- Add couchdb_document_contact_phone_new function (Rodrigo Moya)
+- Added couchdb_document_delete and couchdb_document_set_revision functions
+  (Rodrigo Moya)
+- Added missing couchdb_document_contact_set_addresses implementation
+  (Rodrigo Moya)
+- Added couchdb_document_contact_address_new function (Rodrigo Moya)
+
+===========
+Version 0.3
+===========
+- Use SoupSessionSync instead of the Async version (Rodrigo Moya)
+- Changed contacts format to the new, easier one (Rodrigo Moya)
+- Fix traversal of email_addresses field for contacts (Rodrigo Moya)
+- Add functions to deal with phone numbers in contacts (Rodrigo Moya)
+- Add script to create test contacts (Stuart Langridge)
+- Add functions for contact's postal addresses (Rodrigo Moya)
+- Add couchdb_document_put method (Rodrigo Moya)
+
+===========
+Version 0.2
+===========
+- Version both header files dir and library name (Rodrigo Moya)
+- Convert custom structs to real GType's (Rodrigo Moya)
+- Added couchdb_document_has_field API function (Rodrigo Moya)
+- Added StructField object to deal with objects in JSON documents
+  (Rodrigo Moya)
+- Added some field management functions for both Document's and
+  StructField's (Rodrigo Moya)
+- Added basic DocumentContact 'object' (Rodrigo Moya)
+- Added code to manage email addresses in contact documents (Rodrigo
+  Moya)

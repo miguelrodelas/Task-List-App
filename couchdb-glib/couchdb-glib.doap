@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:foaf="http://xmlns.com/foaf/0.1/"
+         xmlns:gnome="http://api.gnome.org/doap-extensions#"
+         xmlns="http://usefulinc.com/ns/doap#">
+  <name>COUCHDB-GLib</name>
+  <shortname>couchdb-lib</shortname>
+  <shortdesc>GLib-based CouchDB client library</shortdesc>
+  <description>COUCHDB-GLIB provides a GLib-based client library for CouchDB (http://couchdb.apache.org/), a replication/synchronized database used in projects like Ubuntu One.</description>
+
+  <homepage rdf:resource="http://live.gnome.org/CouchDBGlib"/>
+  <license rdf:resource="http://usefulinc.com/doap/licenses/lgpl"/>
+  <bug-database rdf:resource="http://bugzilla.o-hand.com/enter_bug.cgi?product=couchdb-glib"/>
+  <category rdf:resource="http://api.gnome.org/doap-extensions#development"/>
+
+  <programming-language>C</programming-language>
+
+  <maintainer>
+    <foaf:Person>
+      <foaf:name>Rodrigo Moya</foaf:name>
+      <foaf:mbox rdf:resource="mailto:rodrigo@gnome-db.org"/>
+      <gnome:userid>rodrigo</gnome:userid>
+    </foaf:Person>
+  </maintainer>
+
+  <author>
+    <foaf:Person>
+      <foaf:name>Rodrigo Moya</foaf:name>
+      <foaf:mbox rdf:resource="mailto:rodrigo@gnome-db.org"/>
+      <gnome:userid>rodrigo</gnome:userid>
+    </foaf:Person>
+  </author>
+
+</Project>

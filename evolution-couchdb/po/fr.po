@@ -1,0 +1,38 @@
+# French translation for evolution-couchdb.
+# Copyright (C) 2009 evolution-couchdb's COPYRIGHT HOLDER
+# This file is distributed under the same license as the evolution-couchdb package.
+#
+# Claude Paroz <claude@2xlibre.net>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: evolution-couchdb master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-10-04 02:14+0000\n"
+"PO-Revision-Date: 2009-10-04 02:14+0000\n"
+"Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
+"Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../plugins/couchdb-contacts-source.c:111
+msgid "CouchDB"
+msgstr "CouchDB"
+
+#: ../plugins/couchdb-contacts-source.c:235
+msgid "<b>Server</b>"
+msgstr "<b>Serveur</b>"
+
+#: ../plugins/couchdb-contacts-source.c:242
+msgid "Desktop CouchDB"
+msgstr "CouchDB bureau"
+
+#: ../plugins/couchdb-contacts-source.c:248
+msgid "System-wide CouchDB"
+msgstr "CouchDB système"
+
+#: ../plugins/couchdb-contacts-source.c:254
+msgid "Remote CouchDB server"
+msgstr "Serveur CouchDB distant"

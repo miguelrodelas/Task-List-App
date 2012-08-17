@@ -1,0 +1,39 @@
+# Czech translation for evolution-couchdb.
+# Copyright (C) 2009 evolution-couchdb's COPYRIGHT HOLDER
+# This file is distributed under the same license as the evolution-couchdb package.
+# Marek Černocký <marek@manet.cz>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: evolution-couchdb master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-11-04 22:08+0000\n"
+"PO-Revision-Date: 2009-11-09 10:33+0100\n"
+"Last-Translator: Marek Černocký <marek@manet.cz>\n"
+"Language-Team: Czech <gnome-cs-list@gnome.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Poedit-Language: Czech\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: ../plugins/couchdb-contacts-source.c:111
+msgid "CouchDB"
+msgstr "CouchDB"
+
+#: ../plugins/couchdb-contacts-source.c:234
+msgid "<b>Server</b>"
+msgstr "<b>Server</b>"
+
+#: ../plugins/couchdb-contacts-source.c:244
+msgid "Desktop CouchDB"
+msgstr "CouchDB pracovního prostředí"
+
+#: ../plugins/couchdb-contacts-source.c:250
+msgid "System-wide CouchDB"
+msgstr "Celosystémová CouchDB"
+
+#: ../plugins/couchdb-contacts-source.c:256
+msgid "Remote CouchDB server"
+msgstr "Server vzdálené CouchDB"
+

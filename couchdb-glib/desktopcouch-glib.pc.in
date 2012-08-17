@@ -1,0 +1,11 @@
+prefix=@prefix@
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${exec_prefix}/include
+
+Name: Desktopcouch-GLib
+Description: DesktopCouch access library
+Version: @VERSION@
+Libs: -L${libdir} -ldesktopcouch-glib-1.0
+Cflags: -I${includedir}/desktopcouch-glib-1.0
+Requires: couchdb-glib-1.0

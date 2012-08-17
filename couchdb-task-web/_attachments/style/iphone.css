@@ -1,0 +1,10 @@
+p#description {
+	display:none;
+}
+
+textarea#summary {
+	-webkit-text-size-adjust: 150% !important;
+	height: 20%;
+}
+
+

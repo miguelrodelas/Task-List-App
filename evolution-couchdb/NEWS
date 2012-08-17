@@ -1,0 +1,187 @@
+=============
+Version 0.4.5
+=============
+
+- Fixed leak when getting email addresses from EContact's (Rodrigo Moya)
+- Deal correctly with composed names and use correct EContact field for
+  job_title (Rodrigo Moya) (LP: #532930)
+- Depend on couchdb-glib >= 0.6.3 (Rodrigo Moya)
+
+=============
+Version 0.4.4
+=============
+
+- Add REV field to VCARDs for SyncEvolution compatibility (Rodrigo Moya)
+- Support E_CONTACT_REV (Rodrigo Moya) (LP:#479110)
+- Translations:
+  - eu (Iñaki Larrañaga Murgoitio)
+
+=============
+Version 0.4.3
+=============
+
+- Fixed warning (Rodrigo Moya)
+- Translations:
+  - da (Kenneth Nielsen)
+  - gl (Fran Diéguez)
+  - nb (Kjartan Maraas)
+
+=============
+Version 0.4.2
+=============
+
+- Remove deprecated header file (Rodrigo Moya)
+
+=============
+Version 0.4.1
+=============
+
+- Depend on couchdb-glib >= 0.6.1 (Rodrigo Moya)
+
+=============
+Version 0.4.0
+=============
+
+- Use contacts record API from desktopcouch-glib (Rodrigo Moya)
+- Support categories for contacts (Rodrigo Moya)
+- Translations:
+  - hu (Gabor Kelemen)
+
+==============
+Version 0.3.99
+==============
+
+- Take into account the query passed to get_contact_list method to make
+  searching work (Rodrigo Moya)
+- Update to couchdb-glib 0.5.99 API (Rodrigo Moya)
+- Use desktopcouch-glib instead of getting the port and OAuth credentials
+  manually (Rodrigo Moya)
+- Translations:
+  - ca (David Planella)
+  - nds (Nils-Christoph)
+
+=============
+Version 0.3.4
+=============
+
+- Make sure email's descriptions are never NULL (Rodrigo Moya)
+- Don't add empty URLs to the CouchDB record (Rodrigo Moya)
+- Use the description field to know which kind of IM address we're dealing with when
+  there is no 'protocol' field (Rodrigo Moya)
+- Use e_contact_get for dates, since e_contact_get_const just works for strings,
+  and make sure we never set empty dates on contact records (Rodrigo Moya)
+- Add deleted flag to documents instead of removing them from the CouchDB database
+  (only for desktopcouch) (Rodrigo Moya)
+- Fix the losing of the postal addresses when saving contacts in Evolution
+  which I broke by using e_contact_get_const instead of e_contact_get (Rodrigo Moya)
+- Deal correctly with multiline address's streets (Rodrigo Moya)
+- Don't lie saying we support contact lists (Rodrigo Moya)
+- Translations:
+  - cs (Marek Černocký)
+  - zh_CN (Tao Wei)
+
+=============
+Version 0.3.3
+=============
+
+- Get the UID from the iterated list item, not from the head of the list, which
+  tries to delete all the time the first ID (Rodrigo Moya)
+- Fixed removal of CouchDB addressbook options when switching to another
+  addressbook backend and some UI tweaks (Rodrigo Moya)
+- Notify Evolution of modified contacts from the documents stored in the database,
+  not the original ones from Evolution (Rodrigo Moya)
+- Check existence of needed .pc files for e-d-s/evolution plugins dirs (Rodrigo Moya)
+- Don't try to convert empty dates, since Evolution will think they are
+  01/01/1000 (Rodrigo Moya)
+- Translations:
+  - el (Tournaris Pavlos)
+  - es (Jorge González)
+  - sl (Matej Urbančič)
+  - sv (Daniel Nylander)
+
+=============
+Version 0.3.2
+=============
+
+- Work around bug in e-d-s for live queries (Rodrigo Moya)
+- Free the vcard when not calling e_data_book_view_notify_update_vcard (Rodrigo Moya)
+- Translations:
+  - de (Mario Blättermann)
+  - fr (Claude Paroz)
+  - pt_BR (André Gondim)
+
+=============
+Version 0.3.1
+=============
+
+- Support IM addresses fields (Rodrigo Moya)
+- Reworded CouchDB addressbook setup dialog strings (Rodrigo Moya)
+
+=============
+Version 0.3.0
+=============
+
+- Listen for changes on contacts database (Rodrigo Moya)
+- Set the couchdb_instance property's default value to 'user', not 'system'
+  (Rodrigo Moya)
+- Enable OAuth for desktopcouch instance when secrets available in the keyring
+  (Rodrigo Moya)
+- Require couchdb-glib >= 0.5.0 (Rodrigo Moya)
+
+=============
+Version 0.2.1
+=============
+
+- Support a lot of new fields for contacts (Rodrigo Moya)
+- Don't return an error if the database is not found in CouchDB, since that
+  prevented the database creation to be attempted (Rodrigo Moya)
+- Use 127.0.0.1 instead of localhost, since that resolves to :1 in machines
+  with IPv6 enabled (Rodrigo Moya)
+- Support URL fields of contact records (Rodrigo Moya)
+- Set the couchdb_instance on the config dialog when defaulting to per-user
+  CouchDB instance (Rodrigo Moya)
+- Require couchdb-glib >= 0.4.5 (Rodrigo Moya)
+
+=============
+Version 0.2.0
+=============
+
+- Depend on couchdb-glib >= 0.4.4 (Rodrigo Moya)
+- Don't loose UUIDs when converting to EContact (Rodrigo Moya)
+- Store revision of document in EContact, so that updates work (Rodrigo Moya)
+- Add lots of new phone fields we support now (Rodrigo Moya)
+- Return the correct EContact when PUTing documents so that Evolution gets the
+  document as it is in the database (Rodrigo Moya)
+- Add better error reporting from DBus calls (Rodrigo Moya)
+- Add support for application_annotations field (Rodrigo Moya)
+- Use couchdb_document_contact_new for creating contact documents (Rodrigo Moya)
+
+=============
+Version 0.1.4
+=============
+
+- Set descriptions for mail addresses correctly (Rodrigo Moya)
+- Added UI for selecting different CouchDB instances (Rodrigo Moya)
+- Remove all .a and .la files from the package (Ken Van Dine)
+- Use the couchdb instance as specified on the ESource (Rodrigo Moya)
+- Remove unneeded .server file from install (Rodrigo Moya)
+- Pass NULL UUIDs to all contacts fields so that they get generated
+  (Rodrigo Moya)
+- Clean up headers in the source files and the debian/copyright to
+  make sure the license is consistently GPL-3 (Ken Van Dine)
+
+=============
+Version 0.1.3
+=============
+
+- Add missing API from evolution-data-server-2.27.x to make it compile
+  and work on versions <= 2.26.x (Rodrigo Moya)
+- Add LICENSE file to upstream tarball (Rodrigo Moya)
+
+=============
+Version 0.1.2
+=============
+
+- Added missing header files (Rodrigo Moya)
+- Remove unneeded free of DatabaseInfo object (Rodrigo Moya)
+- Fix LDFLAGS for e-d-s backend lib (Rodrigo Moya)

@@ -1,0 +1,2 @@
+addressbook/e-book-backend-couchdb.c
+plugins/couchdb-contacts-source.c
